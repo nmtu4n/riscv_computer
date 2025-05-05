@@ -1,0 +1,18 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Tue May 02 06:51:13 2023
+[*]
+[dumpfile] "D:\Installations\msys2\home\SF\labs\ee3043-lab-pipedline\pipelined-non-fowarding\tb\wave.fst"
+[dumpfile_mtime] "Tue May 02 04:17:07 2023"
+[dumpfile_size] 1292954
+[savefile] "D:\Installations\msys2\home\SF\labs\ee3043-lab-pipedline\pipelined-non-fowarding\tb\wave.gtkw"
+[timestart] 0
+[size] 1620 1017
+[pos] -165 -165
+*0.000000 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 174
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 304
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,1857 @@
+TimeQuest Timing Analyzer report for wrapper
+Fri May 05 23:48:17 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'CLOCK_50'
+ 26. Fast Model Hold: 'CLOCK_50'
+ 27. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; wrapper                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 75.82 MHz ; 75.82 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow Model Setup Summary           ;
++----------+---------+---------------+
+; Clock    ; Slack   ; End Point TNS ;
++----------+---------+---------------+
+; CLOCK_50 ; -12.189 ; -83410.661    ;
++----------+---------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -11646.380         ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                     ;
++---------+--------------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                        ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.189 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 13.219     ;
+; -12.111 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 13.130     ;
+; -12.098 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[10] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.129     ;
+; -12.070 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.101     ;
+; -12.067 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 13.094     ;
+; -12.054 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 13.084     ;
+; -12.050 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.081     ;
+; -12.044 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.075     ;
+; -12.039 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 13.065     ;
+; -12.034 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 13.049     ;
+; -12.033 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.064     ;
+; -12.031 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 13.050     ;
+; -12.016 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[20]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 13.049     ;
+; -12.004 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.035     ;
+; -11.981 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[22]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 13.012     ;
+; -11.966 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 12.996     ;
+; -11.966 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 13.000     ;
+; -11.957 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.984     ;
+; -11.954 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.969     ;
+; -11.949 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.976     ;
+; -11.935 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 12.966     ;
+; -11.934 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.961     ;
+; -11.925 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[23]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 12.956     ;
+; -11.921 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.947     ;
+; -11.916 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.931     ;
+; -11.909 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[21]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 12.940     ;
+; -11.904 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.930     ;
+; -11.900 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.927     ;
+; -11.888 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.915     ;
+; -11.883 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 12.921     ;
+; -11.865 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.892     ;
+; -11.860 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.886     ;
+; -11.855 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.870     ;
+; -11.854 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.881     ;
+; -11.848 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 12.882     ;
+; -11.839 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.866     ;
+; -11.837 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.863     ;
+; -11.836 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.851     ;
+; -11.832 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.847     ;
+; -11.826 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[17]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.855     ;
+; -11.825 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 12.870     ;
+; -11.821 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.848     ;
+; -11.816 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.843     ;
+; -11.810 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[15]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.839     ;
+; -11.800 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[3]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 12.819     ;
+; -11.799 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 12.829     ;
+; -11.787 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[15]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 12.820     ;
+; -11.787 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 12.821     ;
+; -11.786 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.812     ;
+; -11.782 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.809     ;
+; -11.778 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.805     ;
+; -11.775 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.790     ;
+; -11.773 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[18]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.802     ;
+; -11.764 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 12.798     ;
+; -11.755 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.782     ;
+; -11.755 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.782     ;
+; -11.754 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 12.798     ;
+; -11.752 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.778     ;
+; -11.752 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.767     ;
+; -11.751 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 12.795     ;
+; -11.747 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 12.781     ;
+; -11.743 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[17]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 12.776     ;
+; -11.737 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.764     ;
+; -11.736 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.763     ;
+; -11.734 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[10] ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 12.780     ;
+; -11.732 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.759     ;
+; -11.731 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.758     ;
+; -11.726 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[18] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.011      ; 12.773     ;
+; -11.725 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.751     ;
+; -11.723 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[3]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.738     ;
+; -11.721 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.748     ;
+; -11.717 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 12.748     ;
+; -11.711 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.738     ;
+; -11.709 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.735     ;
+; -11.708 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[17]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.737     ;
+; -11.706 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 12.752     ;
+; -11.704 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.719     ;
+; -11.703 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.729     ;
+; -11.703 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.730     ;
+; -11.702 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 12.728     ;
+; -11.698 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.725     ;
+; -11.698 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 12.713     ;
+; -11.696 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.012      ; 12.744     ;
+; -11.692 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[15]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.721     ;
+; -11.690 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 12.735     ;
+; -11.690 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[18]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 12.723     ;
+; -11.686 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[30] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 12.715     ;
+; -11.686 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 12.732     ;
+; -11.680 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 12.726     ;
+; -11.677 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.704     ;
+; -11.676 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 12.709     ;
+; -11.675 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 12.702     ;
+; -11.673 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 12.706     ;
+; -11.672 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.012      ; 12.720     ;
+; -11.672 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[4]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 12.691     ;
+; -11.671 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.012      ; 12.719     ;
+; -11.670 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 12.714     ;
+; -11.669 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 12.715     ;
+; -11.668 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.022     ; 12.682     ;
+; -11.667 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 12.701     ;
++---------+--------------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                             ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                    ; To Node                                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[11]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[11]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.522 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[7]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_2|dmem[25][0][7] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.788      ;
+; 0.523 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[14]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[14]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.526 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[9]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[35][1][1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.527 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[31]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[31]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.793      ;
+; 0.531 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[9]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[9]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.563 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[26]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.829      ;
+; 0.649 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[22]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[22]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.915      ;
+; 0.650 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[5]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[5]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.916      ;
+; 0.653 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[30]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[30]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.919      ;
+; 0.655 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[16]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[16]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.921      ;
+; 0.656 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[2]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[2]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.922      ;
+; 0.656 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[6]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[6]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.922      ;
+; 0.660 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[9]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[9]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.926      ;
+; 0.667 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]                              ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.933      ;
+; 0.671 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[27]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[27]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.938      ;
+; 0.673 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[10]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.939      ;
+; 0.689 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[22]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.955      ;
+; 0.717 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[3]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[3]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.984      ;
+; 0.731 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[21]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[21]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.998      ;
+; 0.779 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[25]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[25]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[29]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.045      ;
+; 0.782 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][2] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.048      ;
+; 0.783 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][5] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[5]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.049      ;
+; 0.785 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][4] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[4]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.051      ;
+; 0.791 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[24]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[24]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.057      ;
+; 0.793 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[17]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[17]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.059      ;
+; 0.794 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[11]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[11]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.060      ;
+; 0.795 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.798 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[1]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[1]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.799 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[20]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[20]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.800 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[3]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[3]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.066      ;
+; 0.801 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[21]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[21]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[13]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[13]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[2]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[2]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[15]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[15]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[16]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[16]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[26]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[26]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[14]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[14]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[8]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[8]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[5]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[5]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[3]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[3]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[12]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[12]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[10]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[10]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.821 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[26]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[6]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.088      ;
+; 0.825 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[27]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[27]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.091      ;
+; 0.825 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[29]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[29]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.091      ;
+; 0.827 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[5]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.093      ;
+; 0.828 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[4]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[4]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[23]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[23]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[31]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[31]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.831 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[28]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[28]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.097      ;
+; 0.832 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[8]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[8]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.834 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[9]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.834 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[19]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[19]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.102      ;
+; 0.834 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[6]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.837 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[10]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[10]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.105      ;
+; 0.837 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[24]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.103      ;
+; 0.837 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[29]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[9]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.103      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[25]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[25]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[29]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[29]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[20]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[20]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[13]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[13]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[4]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[4]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[9]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[9]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[11]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[11]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[7]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[7]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[6]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[6]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.842 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[11]                              ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[55][1][3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.109      ;
+; 0.845 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[8]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[8]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.112      ;
+; 0.852 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[12]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[12]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.119      ;
+; 0.857 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[25]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[5]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.124      ;
+; 0.870 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[0]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[19][0][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.138      ;
+; 0.870 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[0]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[31][0][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.138      ;
+; 0.873 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]                              ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.139      ;
+; 0.957 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[3]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_2|dmem[25][0][3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.224      ;
+; 0.964 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[18]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[18]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.232      ;
+; 0.969 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[6]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_3|dmem[17][0][6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.239      ;
+; 0.992 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_3|dmem[17][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.259      ;
+; 0.993 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[19]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[19]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.261      ;
+; 0.996 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[26]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[26]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.263      ;
+; 1.009 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]                               ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[9]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 1.270      ;
+; 1.022 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[2]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[19][0][2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.292      ;
+; 1.038 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[31][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.305      ;
+; 1.038 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[19][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.305      ;
+; 1.041 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[23]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[23]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.308      ;
+; 1.064 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[8]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[8]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.007      ; 1.337      ;
+; 1.066 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[10]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.337      ;
+; 1.071 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[2]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[2]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.003     ; 1.334      ;
+; 1.088 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[2]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[17][0][2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.359      ;
+; 1.091 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[5]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[17][0][5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.362      ;
+; 1.099 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[17]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.365      ;
+; 1.105 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[23]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.002     ; 1.369      ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                           ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                           ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[13]   ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 8.182  ; 8.182  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 0.429  ; 0.429  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.343  ; 0.343  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 1.032  ; 1.032  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 1.071  ; 1.071  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.337  ; 0.337  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.626  ; 0.626  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.331  ; 0.331  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -0.108 ; -0.108 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.588  ; 0.588  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.375  ; 0.375  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.436  ; 0.436  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -0.254 ; -0.254 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.276 ; -0.276 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 4.476  ; 4.476  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 4.463  ; 4.463  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 4.196  ; 4.196  ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; 4.383  ; 4.383  ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; 8.182  ; 8.182  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.506  ; 0.506  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; -0.199 ; -0.199 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -0.113 ; -0.113 ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; -0.802 ; -0.802 ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.841 ; -0.841 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; -0.107 ; -0.107 ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; -0.396 ; -0.396 ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; -0.101 ; -0.101 ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 0.338  ; 0.338  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; -0.358 ; -0.358 ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; -0.145 ; -0.145 ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; -0.206 ; -0.206 ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 0.484  ; 0.484  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 0.506  ; 0.506  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -4.246 ; -4.246 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -4.233 ; -4.233 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -3.966 ; -3.966 ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; -4.153 ; -4.153 ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; -4.505 ; -4.505 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 7.474  ; 7.474  ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 7.474  ; 7.474  ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 7.421  ; 7.421  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 7.387  ; 7.387  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 7.399  ; 7.399  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 7.126  ; 7.126  ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 7.167  ; 7.167  ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 7.115  ; 7.115  ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 8.122  ; 8.122  ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 7.922  ; 7.922  ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 7.222  ; 7.222  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 7.944  ; 7.944  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 7.920  ; 7.920  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 7.250  ; 7.250  ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 7.871  ; 7.871  ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 8.122  ; 8.122  ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 8.374  ; 8.374  ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 7.292  ; 7.292  ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 8.374  ; 8.374  ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 7.994  ; 7.994  ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 8.067  ; 8.067  ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 7.966  ; 7.966  ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 8.047  ; 8.047  ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 7.447  ; 7.447  ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 8.462  ; 8.462  ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 7.924  ; 7.924  ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 8.238  ; 8.238  ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 7.706  ; 7.706  ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 8.188  ; 8.188  ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 7.748  ; 7.748  ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 8.462  ; 8.462  ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 7.524  ; 7.524  ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 8.540  ; 8.540  ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 7.398  ; 7.398  ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 7.707  ; 7.707  ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 8.540  ; 8.540  ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 7.810  ; 7.810  ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 7.847  ; 7.847  ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 8.212  ; 8.212  ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 7.611  ; 7.611  ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 8.708  ; 8.708  ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 7.449  ; 7.449  ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 7.798  ; 7.798  ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 8.085  ; 8.085  ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 8.088  ; 8.088  ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 8.708  ; 8.708  ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 8.041  ; 8.041  ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 8.056  ; 8.056  ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 9.172  ; 9.172  ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 8.771  ; 8.771  ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 8.757  ; 8.757  ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 8.233  ; 8.233  ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 8.353  ; 8.353  ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 8.388  ; 8.388  ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 9.172  ; 9.172  ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 8.413  ; 8.413  ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 9.085  ; 9.085  ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 9.016  ; 9.016  ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 8.365  ; 8.365  ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 8.736  ; 8.736  ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 9.085  ; 9.085  ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 8.614  ; 8.614  ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 8.484  ; 8.484  ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 8.265  ; 8.265  ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 9.982  ; 9.982  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 8.124  ; 8.124  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 9.972  ; 9.972  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 8.922  ; 8.922  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 9.108  ; 9.108  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 9.138  ; 9.138  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 9.982  ; 9.982  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 9.399  ; 9.399  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 8.523  ; 8.523  ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 9.189  ; 9.189  ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 9.606  ; 9.606  ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 9.572  ; 9.572  ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 7.940  ; 7.940  ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 15.568 ; 15.568 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 8.623  ; 8.623  ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 9.158  ; 9.158  ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 8.422  ; 8.422  ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 8.594  ; 8.594  ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 8.476  ; 8.476  ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 8.716  ; 8.716  ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 8.683  ; 8.683  ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 7.970  ; 7.970  ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 15.568 ; 15.568 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 8.316  ; 8.316  ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 8.297  ; 8.297  ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 8.316  ; 8.316  ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 8.028  ; 8.028  ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 8.275  ; 8.275  ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 7.544  ; 7.544  ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 7.650  ; 7.650  ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 8.240  ; 8.240  ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 7.981  ; 7.981  ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 7.257  ; 7.257  ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 7.264  ; 7.264  ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 7.728  ; 7.728  ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 7.342  ; 7.342  ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 7.790  ; 7.790  ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 7.342  ; 7.342  ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 8.116  ; 8.116  ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 7.953  ; 7.953  ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 8.300  ; 8.300  ; Rise       ; CLOCK_50        ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 7.115 ; 7.115 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 7.474 ; 7.474 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 7.421 ; 7.421 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 7.387 ; 7.387 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 7.399 ; 7.399 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 7.126 ; 7.126 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 7.167 ; 7.167 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 7.115 ; 7.115 ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 7.222 ; 7.222 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 7.922 ; 7.922 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 7.222 ; 7.222 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 7.944 ; 7.944 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 7.920 ; 7.920 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 7.250 ; 7.250 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 7.871 ; 7.871 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 8.122 ; 8.122 ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 7.292 ; 7.292 ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 7.292 ; 7.292 ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 8.374 ; 8.374 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 7.994 ; 7.994 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 8.067 ; 8.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 7.966 ; 7.966 ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 8.047 ; 8.047 ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 7.447 ; 7.447 ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 7.524 ; 7.524 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 7.924 ; 7.924 ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 8.238 ; 8.238 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 7.706 ; 7.706 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 8.188 ; 8.188 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 7.748 ; 7.748 ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 8.462 ; 8.462 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 7.524 ; 7.524 ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 7.398 ; 7.398 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 7.398 ; 7.398 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 7.707 ; 7.707 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 8.540 ; 8.540 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 7.810 ; 7.810 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 7.847 ; 7.847 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 8.212 ; 8.212 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 7.611 ; 7.611 ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 7.449 ; 7.449 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 7.449 ; 7.449 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 7.798 ; 7.798 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 8.085 ; 8.085 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 8.088 ; 8.088 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 8.708 ; 8.708 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 8.041 ; 8.041 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 8.056 ; 8.056 ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 8.233 ; 8.233 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 8.771 ; 8.771 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 8.757 ; 8.757 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 8.233 ; 8.233 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 8.353 ; 8.353 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 8.388 ; 8.388 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 9.172 ; 9.172 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 8.413 ; 8.413 ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 8.265 ; 8.265 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 9.016 ; 9.016 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 8.365 ; 8.365 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 8.736 ; 8.736 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 9.085 ; 9.085 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 8.614 ; 8.614 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 8.484 ; 8.484 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 8.265 ; 8.265 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 8.124 ; 8.124 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 8.124 ; 8.124 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 9.972 ; 9.972 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 8.922 ; 8.922 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 9.108 ; 9.108 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 9.138 ; 9.138 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 9.982 ; 9.982 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 9.399 ; 9.399 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 8.523 ; 8.523 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 9.189 ; 9.189 ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 9.606 ; 9.606 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 9.572 ; 9.572 ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 7.940 ; 7.940 ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 7.970 ; 7.970 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 8.623 ; 8.623 ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 9.158 ; 9.158 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 8.422 ; 8.422 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 8.594 ; 8.594 ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 8.476 ; 8.476 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 8.716 ; 8.716 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 8.683 ; 8.683 ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 7.970 ; 7.970 ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 9.074 ; 9.074 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 7.257 ; 7.257 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 8.297 ; 8.297 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 8.316 ; 8.316 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 8.028 ; 8.028 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 8.275 ; 8.275 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 7.544 ; 7.544 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 7.650 ; 7.650 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 8.240 ; 8.240 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 7.981 ; 7.981 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 7.257 ; 7.257 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 7.264 ; 7.264 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 7.728 ; 7.728 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 7.342 ; 7.342 ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 7.790 ; 7.790 ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 7.342 ; 7.342 ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 8.116 ; 8.116 ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 7.953 ; 7.953 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 8.300 ; 8.300 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 9.611 ; 9.611 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 9.611 ; 9.611 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -5.049 ; -33878.993    ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -11646.380         ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                     ;
++--------+--------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.049 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.077      ;
+; -4.983 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.011      ;
+; -4.975 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.993      ;
+; -4.961 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.979      ;
+; -4.946 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.975      ;
+; -4.945 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.974      ;
+; -4.944 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.973      ;
+; -4.942 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[10] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.971      ;
+; -4.929 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.958      ;
+; -4.917 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[20]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.948      ;
+; -4.901 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.930      ;
+; -4.900 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.928      ;
+; -4.887 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.910      ;
+; -4.885 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.914      ;
+; -4.883 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[22]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.912      ;
+; -4.880 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[23]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.909      ;
+; -4.865 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[21]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.894      ;
+; -4.858 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.882      ;
+; -4.856 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.884      ;
+; -4.847 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.883      ;
+; -4.843 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.856      ;
+; -4.838 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[3]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.856      ;
+; -4.829 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.842      ;
+; -4.827 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.850      ;
+; -4.821 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.844      ;
+; -4.816 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[4]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.844      ;
+; -4.815 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.839      ;
+; -4.814 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[4]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.832      ;
+; -4.813 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.837      ;
+; -4.799 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.822      ;
+; -4.799 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.830      ;
+; -4.798 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 5.839      ;
+; -4.798 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.822      ;
+; -4.793 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[17]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.824      ;
+; -4.791 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[18]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.822      ;
+; -4.788 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[15]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.819      ;
+; -4.786 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.815      ;
+; -4.783 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.014      ; 5.829      ;
+; -4.783 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.807      ;
+; -4.783 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.796      ;
+; -4.780 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[7]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.011      ; 5.823      ;
+; -4.776 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[12]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.011      ; 5.819      ;
+; -4.774 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.803      ;
+; -4.770 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.794      ;
+; -4.769 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.782      ;
+; -4.768 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[18]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.014      ; 5.814      ;
+; -4.767 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.791      ;
+; -4.765 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[23]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.804      ;
+; -4.764 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[0]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.782      ;
+; -4.761 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.784      ;
+; -4.756 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[14]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 5.767      ;
+; -4.755 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.779      ;
+; -4.755 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.768      ;
+; -4.754 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[16]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 5.765      ;
+; -4.753 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.777      ;
+; -4.751 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.774      ;
+; -4.751 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.775      ;
+; -4.745 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[15]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.771      ;
+; -4.745 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[17]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.771      ;
+; -4.743 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[4]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 5.776      ;
+; -4.743 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[25]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 5.776      ;
+; -4.743 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[18]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.769      ;
+; -4.742 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[4]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 5.744      ;
+; -4.742 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[2]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 5.744      ;
+; -4.741 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[2]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 5.754      ;
+; -4.740 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[24]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.030     ; 5.742      ;
+; -4.740 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[19]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.776      ;
+; -4.739 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[16]   ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.770      ;
+; -4.734 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[12]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 5.772      ;
+; -4.734 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[21]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.769      ;
+; -4.733 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[19]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.768      ;
+; -4.733 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.756      ;
+; -4.732 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 5.773      ;
+; -4.728 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[17]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.763      ;
+; -4.727 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.751      ;
+; -4.725 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[8]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.749      ;
+; -4.724 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[5]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.755      ;
+; -4.723 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[15]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.741      ;
+; -4.723 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.747      ;
+; -4.722 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[11]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.740      ;
+; -4.722 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[30]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.748      ;
+; -4.722 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[13]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.740      ;
+; -4.722 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 5.745      ;
+; -4.722 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]  ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 5.746      ;
+; -4.721 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[23]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.739      ;
+; -4.720 ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[11] ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[1]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 5.749      ;
+; -4.719 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[8]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 5.764      ;
+; -4.719 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[29]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.012      ; 5.763      ;
+; -4.719 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[29]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.012      ; 5.763      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[21] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[27] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[28] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[23] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.718 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 5.753      ;
+; -4.717 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[22] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.014      ; 5.763      ;
+; -4.716 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[8]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.734      ;
+; -4.716 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs1[26]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 5.749      ;
+; -4.716 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|rs2[5]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.734      ;
++--------+--------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                             ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                    ; To Node                                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[11]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[11]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[7]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_2|dmem[25][0][7] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.240 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[9]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[35][1][1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[31]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[31]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[14]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[14]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.243 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[9]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[9]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.263 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[26]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.415      ;
+; 0.298 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[10]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.450      ;
+; 0.310 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[22]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.462      ;
+; 0.313 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[27]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[27]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.467      ;
+; 0.315 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[2]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[2]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.467      ;
+; 0.315 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[5]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[5]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.467      ;
+; 0.315 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[22]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[22]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.467      ;
+; 0.317 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[30]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[30]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.469      ;
+; 0.319 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[16]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[16]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.471      ;
+; 0.319 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[9]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[9]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.471      ;
+; 0.320 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[6]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[6]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.472      ;
+; 0.327 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[3]                                  ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[3]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.480      ;
+; 0.327 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]                              ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[9]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.479      ;
+; 0.337 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[21]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[21]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.491      ;
+; 0.355 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[21]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[21]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[2]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[2]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[24]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[24]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[26]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[26]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[28]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[3]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[3]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[12]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[12]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[10]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[10]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[11]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[11]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[15]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[15]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[16]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[16]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[17]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[17]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[14]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[14]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[8]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[8]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[5]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[5]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.364 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[29]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[20]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[20]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[3]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[3]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[1]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[1]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.368 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[25]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[25]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[13]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[13]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[25]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[25]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[27]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[20]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[20]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[4]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[4]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[9]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[9]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[11]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[11]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[23]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[29]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[29]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[24]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[13]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[13]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[7]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[7]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[6]                                      ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[6]                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.374 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[27]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[27]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[29]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[29]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[31]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[31]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[4]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[4]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[23]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[23]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[8]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|inst[8]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][5] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[5]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[28]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[28]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[29]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[9]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][2] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380 ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_ip_bank:lsu_2d_5|dmem[0][0][4] ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|wb_data[4]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.381 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[5]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[9]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.387 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[2]                                ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[6]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.539      ;
+; 0.396 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[19]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[19]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.549      ;
+; 0.400 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[10]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[10]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.553      ;
+; 0.403 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[8]                                  ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[8]                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.557      ;
+; 0.403 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[26]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[6]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.557      ;
+; 0.407 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[12]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[12]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.561      ;
+; 0.407 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[11]                              ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[55][1][3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.560      ;
+; 0.410 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[25]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[5]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.564      ;
+; 0.421 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[0]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[19][0][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.575      ;
+; 0.422 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[0]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_0|dmem[31][0][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.576      ;
+; 0.424 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]                              ; pipelinedcpu:pipelinedcpu|mem_wb:MEM_WB|inst[7]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.576      ;
+; 0.437 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[3]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_2|dmem[25][0][3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.590      ;
+; 0.443 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[6]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_3|dmem[17][0][6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 0.599      ;
+; 0.443 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|pc[18]                                 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[18]                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.596      ;
+; 0.454 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[19]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[19]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.608      ;
+; 0.454 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[26]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[26]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.608      ;
+; 0.456 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_3|dmem[17][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.609      ;
+; 0.463 ; pipelinedcpu:pipelinedcpu|if_id:IF_ID|inst[23]                               ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|imm[23]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 0.617      ;
+; 0.466 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[2]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[19][0][2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.003      ; 0.621      ;
+; 0.469 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]                               ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[9]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.616      ;
+; 0.476 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[31][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.628      ;
+; 0.476 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[4]                               ; pipelinedcpu:pipelinedcpu|lsu_main:LSU|lsu_2d_bank:lsu_2d_1|dmem[19][0][4] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.628      ;
+; 0.493 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[17]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.495 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]                              ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|rs2[17]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.646      ;
+; 0.496 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[30]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[31]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[20]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[21]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[22]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; pipelinedcpu:pipelinedcpu|id_ex:ID_EX|pc[10]                                 ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.006      ; 0.655      ;
+; 0.497 ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[18]                                     ; pipelinedcpu:pipelinedcpu|pc:PC|pc_o[19]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
++-------+------------------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                           ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                           ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|alu[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|inst[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[10]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[11]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[12]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; pipelinedcpu:pipelinedcpu|ex_mem:EX_MEM|pc[13]   ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 4.295  ; 4.295  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; -0.047 ; -0.047 ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; -0.100 ; -0.100 ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 0.277  ; 0.277  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 0.329  ; 0.329  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; -0.055 ; -0.055 ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.061  ; 0.061  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; -0.095 ; -0.095 ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -0.337 ; -0.337 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.060  ; 0.060  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.006  ; 0.006  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; -0.050 ; -0.050 ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -0.394 ; -0.394 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.408 ; -0.408 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 2.456  ; 2.456  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 2.425  ; 2.425  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 2.324  ; 2.324  ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; 2.393  ; 2.393  ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; 4.295  ; 4.295  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.528  ; 0.528  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 0.167  ; 0.167  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.220  ; 0.220  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; -0.157 ; -0.157 ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.209 ; -0.209 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.175  ; 0.175  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.059  ; 0.059  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.215  ; 0.215  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 0.457  ; 0.457  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.060  ; 0.060  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.114  ; 0.114  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.170  ; 0.170  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 0.514  ; 0.514  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 0.528  ; 0.528  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -2.336 ; -2.336 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -2.305 ; -2.305 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -2.204 ; -2.204 ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; -2.273 ; -2.273 ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; -2.474 ; -2.474 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 4.174 ; 4.174 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 4.174 ; 4.174 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 4.156 ; 4.156 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 4.151 ; 4.151 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 4.127 ; 4.127 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 3.999 ; 3.999 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 4.021 ; 4.021 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 3.984 ; 3.984 ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 4.410 ; 4.410 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 4.079 ; 4.079 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 4.305 ; 4.305 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 4.292 ; 4.292 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 4.036 ; 4.036 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 4.262 ; 4.262 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 4.410 ; 4.410 ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 4.637 ; 4.637 ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 4.637 ; 4.637 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 4.345 ; 4.345 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 4.322 ; 4.322 ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 4.375 ; 4.375 ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 4.108 ; 4.108 ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 4.536 ; 4.536 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 4.325 ; 4.325 ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 4.465 ; 4.465 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 4.272 ; 4.272 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 4.428 ; 4.428 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 4.267 ; 4.267 ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 4.536 ; 4.536 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 4.106 ; 4.106 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 4.269 ; 4.269 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 4.323 ; 4.323 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 4.462 ; 4.462 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 4.217 ; 4.217 ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 4.780 ; 4.780 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 4.149 ; 4.149 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 4.389 ; 4.389 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 4.780 ; 4.780 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 4.353 ; 4.353 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 4.367 ; 4.367 ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 4.691 ; 4.691 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 4.856 ; 4.856 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 4.469 ; 4.469 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 4.618 ; 4.618 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 4.582 ; 4.582 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 4.679 ; 4.679 ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 4.612 ; 4.612 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 4.742 ; 4.742 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 4.670 ; 4.670 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 4.630 ; 4.630 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 5.310 ; 5.310 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 5.310 ; 5.310 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 4.900 ; 4.900 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 4.963 ; 4.963 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 5.293 ; 5.293 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 5.072 ; 5.072 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 4.730 ; 4.730 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 4.974 ; 4.974 ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 5.141 ; 5.141 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 5.288 ; 5.288 ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 7.752 ; 7.752 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 4.933 ; 4.933 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 4.620 ; 4.620 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 4.693 ; 4.693 ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 4.675 ; 4.675 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 4.770 ; 4.770 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 4.723 ; 4.723 ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 7.752 ; 7.752 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 4.662 ; 4.662 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 4.534 ; 4.534 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 4.547 ; 4.547 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 4.509 ; 4.509 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 4.225 ; 4.225 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 4.284 ; 4.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 4.496 ; 4.496 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 4.377 ; 4.377 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 4.055 ; 4.055 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 4.281 ; 4.281 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 4.096 ; 4.096 ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 4.318 ; 4.318 ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 4.101 ; 4.101 ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 4.488 ; 4.488 ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 4.662 ; 4.662 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 3.984 ; 3.984 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 4.174 ; 4.174 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 4.156 ; 4.156 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 4.151 ; 4.151 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 4.127 ; 4.127 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 3.999 ; 3.999 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 4.021 ; 4.021 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 3.984 ; 3.984 ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 4.036 ; 4.036 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 4.079 ; 4.079 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 4.305 ; 4.305 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 4.292 ; 4.292 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 4.036 ; 4.036 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 4.262 ; 4.262 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 4.410 ; 4.410 ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 4.637 ; 4.637 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 4.345 ; 4.345 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 4.322 ; 4.322 ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 4.375 ; 4.375 ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 4.108 ; 4.108 ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 4.325 ; 4.325 ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 4.465 ; 4.465 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 4.272 ; 4.272 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 4.428 ; 4.428 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 4.267 ; 4.267 ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 4.536 ; 4.536 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 4.106 ; 4.106 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 4.106 ; 4.106 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 4.269 ; 4.269 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 4.323 ; 4.323 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 4.462 ; 4.462 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 4.217 ; 4.217 ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 4.149 ; 4.149 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 4.149 ; 4.149 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 4.389 ; 4.389 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 4.780 ; 4.780 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 4.353 ; 4.353 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 4.367 ; 4.367 ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 4.469 ; 4.469 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 4.691 ; 4.691 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 4.856 ; 4.856 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 4.469 ; 4.469 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 4.618 ; 4.618 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 4.582 ; 4.582 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 4.679 ; 4.679 ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 4.612 ; 4.612 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 4.742 ; 4.742 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 4.670 ; 4.670 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 4.630 ; 4.630 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 5.310 ; 5.310 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 4.900 ; 4.900 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 4.963 ; 4.963 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 5.293 ; 5.293 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 5.072 ; 5.072 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 4.730 ; 4.730 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 4.974 ; 4.974 ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 5.141 ; 5.141 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 5.288 ; 5.288 ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 4.933 ; 4.933 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 4.620 ; 4.620 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 4.693 ; 4.693 ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 4.675 ; 4.675 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 4.770 ; 4.770 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 4.723 ; 4.723 ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 4.932 ; 4.932 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 4.055 ; 4.055 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 4.534 ; 4.534 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 4.547 ; 4.547 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 4.509 ; 4.509 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 4.225 ; 4.225 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 4.284 ; 4.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 4.496 ; 4.496 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 4.377 ; 4.377 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 4.055 ; 4.055 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 4.281 ; 4.281 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 4.096 ; 4.096 ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 4.318 ; 4.318 ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 4.101 ; 4.101 ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 4.488 ; 4.488 ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 4.662 ; 4.662 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 5.517 ; 5.517 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 5.517 ; 5.517 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+------------+-------+----------+---------+---------------------+
+; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+------------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -12.189    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -12.189    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -83410.661 ; 0.0   ; 0.0      ; 0.0     ; -11646.38           ;
+;  CLOCK_50        ; -83410.661 ; 0.000 ; N/A      ; N/A     ; -11646.380          ;
++------------------+------------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 8.182  ; 8.182  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 0.429  ; 0.429  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.343  ; 0.343  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; 1.032  ; 1.032  ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; 1.071  ; 1.071  ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.337  ; 0.337  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.626  ; 0.626  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.331  ; 0.331  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; -0.108 ; -0.108 ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.588  ; 0.588  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.375  ; 0.375  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.436  ; 0.436  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; -0.254 ; -0.254 ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; -0.276 ; -0.276 ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; 4.476  ; 4.476  ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; 4.463  ; 4.463  ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; 4.196  ; 4.196  ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; 4.383  ; 4.383  ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; 8.182  ; 8.182  ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; CLOCK_50   ; 0.528  ; 0.528  ; Rise       ; CLOCK_50        ;
+;  SW[0]    ; CLOCK_50   ; 0.167  ; 0.167  ; Rise       ; CLOCK_50        ;
+;  SW[1]    ; CLOCK_50   ; 0.220  ; 0.220  ; Rise       ; CLOCK_50        ;
+;  SW[2]    ; CLOCK_50   ; -0.157 ; -0.157 ; Rise       ; CLOCK_50        ;
+;  SW[3]    ; CLOCK_50   ; -0.209 ; -0.209 ; Rise       ; CLOCK_50        ;
+;  SW[4]    ; CLOCK_50   ; 0.175  ; 0.175  ; Rise       ; CLOCK_50        ;
+;  SW[5]    ; CLOCK_50   ; 0.059  ; 0.059  ; Rise       ; CLOCK_50        ;
+;  SW[6]    ; CLOCK_50   ; 0.215  ; 0.215  ; Rise       ; CLOCK_50        ;
+;  SW[7]    ; CLOCK_50   ; 0.457  ; 0.457  ; Rise       ; CLOCK_50        ;
+;  SW[8]    ; CLOCK_50   ; 0.060  ; 0.060  ; Rise       ; CLOCK_50        ;
+;  SW[9]    ; CLOCK_50   ; 0.114  ; 0.114  ; Rise       ; CLOCK_50        ;
+;  SW[10]   ; CLOCK_50   ; 0.170  ; 0.170  ; Rise       ; CLOCK_50        ;
+;  SW[11]   ; CLOCK_50   ; 0.514  ; 0.514  ; Rise       ; CLOCK_50        ;
+;  SW[12]   ; CLOCK_50   ; 0.528  ; 0.528  ; Rise       ; CLOCK_50        ;
+;  SW[13]   ; CLOCK_50   ; -2.336 ; -2.336 ; Rise       ; CLOCK_50        ;
+;  SW[14]   ; CLOCK_50   ; -2.305 ; -2.305 ; Rise       ; CLOCK_50        ;
+;  SW[15]   ; CLOCK_50   ; -2.204 ; -2.204 ; Rise       ; CLOCK_50        ;
+;  SW[16]   ; CLOCK_50   ; -2.273 ; -2.273 ; Rise       ; CLOCK_50        ;
+;  SW[17]   ; CLOCK_50   ; -2.474 ; -2.474 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 7.474  ; 7.474  ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 7.474  ; 7.474  ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 7.421  ; 7.421  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 7.387  ; 7.387  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 7.399  ; 7.399  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 7.126  ; 7.126  ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 7.167  ; 7.167  ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 7.115  ; 7.115  ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 8.122  ; 8.122  ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 7.922  ; 7.922  ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 7.222  ; 7.222  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 7.944  ; 7.944  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 7.920  ; 7.920  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 7.250  ; 7.250  ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 7.871  ; 7.871  ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 8.122  ; 8.122  ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 8.374  ; 8.374  ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 7.292  ; 7.292  ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 8.374  ; 8.374  ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 7.994  ; 7.994  ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 8.067  ; 8.067  ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 7.966  ; 7.966  ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 8.047  ; 8.047  ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 7.447  ; 7.447  ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 8.462  ; 8.462  ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 7.924  ; 7.924  ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 8.238  ; 8.238  ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 7.706  ; 7.706  ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 8.188  ; 8.188  ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 7.748  ; 7.748  ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 8.462  ; 8.462  ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 7.524  ; 7.524  ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 8.540  ; 8.540  ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 7.398  ; 7.398  ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 7.707  ; 7.707  ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 8.540  ; 8.540  ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 7.810  ; 7.810  ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 7.847  ; 7.847  ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 8.212  ; 8.212  ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 7.611  ; 7.611  ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 8.708  ; 8.708  ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 7.449  ; 7.449  ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 7.798  ; 7.798  ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 8.085  ; 8.085  ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 8.088  ; 8.088  ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 8.708  ; 8.708  ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 8.041  ; 8.041  ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 8.056  ; 8.056  ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 9.172  ; 9.172  ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 8.771  ; 8.771  ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 8.757  ; 8.757  ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 8.233  ; 8.233  ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 8.353  ; 8.353  ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 8.388  ; 8.388  ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 9.172  ; 9.172  ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 8.413  ; 8.413  ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 9.085  ; 9.085  ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 9.016  ; 9.016  ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 8.365  ; 8.365  ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 8.736  ; 8.736  ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 9.085  ; 9.085  ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 8.614  ; 8.614  ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 8.484  ; 8.484  ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 8.265  ; 8.265  ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 9.982  ; 9.982  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 8.124  ; 8.124  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 9.972  ; 9.972  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 8.922  ; 8.922  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 9.108  ; 9.108  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 9.138  ; 9.138  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 9.982  ; 9.982  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 9.399  ; 9.399  ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 8.523  ; 8.523  ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 9.189  ; 9.189  ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 9.606  ; 9.606  ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 9.572  ; 9.572  ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 7.940  ; 7.940  ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 15.568 ; 15.568 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 8.623  ; 8.623  ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 9.158  ; 9.158  ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 8.422  ; 8.422  ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 8.594  ; 8.594  ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 8.476  ; 8.476  ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 8.716  ; 8.716  ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 8.683  ; 8.683  ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 7.970  ; 7.970  ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 15.568 ; 15.568 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 8.316  ; 8.316  ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 8.297  ; 8.297  ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 8.316  ; 8.316  ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 8.028  ; 8.028  ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 8.275  ; 8.275  ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 7.544  ; 7.544  ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 7.650  ; 7.650  ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 8.240  ; 8.240  ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 7.981  ; 7.981  ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 7.257  ; 7.257  ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 7.264  ; 7.264  ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 7.728  ; 7.728  ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 7.342  ; 7.342  ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 7.790  ; 7.790  ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 7.342  ; 7.342  ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 8.116  ; 8.116  ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 7.953  ; 7.953  ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 8.300  ; 8.300  ; Rise       ; CLOCK_50        ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]      ; CLOCK_50   ; 3.984 ; 3.984 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]     ; CLOCK_50   ; 4.174 ; 4.174 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]     ; CLOCK_50   ; 4.156 ; 4.156 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]     ; CLOCK_50   ; 4.151 ; 4.151 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]     ; CLOCK_50   ; 4.127 ; 4.127 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]     ; CLOCK_50   ; 3.999 ; 3.999 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]     ; CLOCK_50   ; 4.021 ; 4.021 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]     ; CLOCK_50   ; 3.984 ; 3.984 ; Rise       ; CLOCK_50        ;
+; HEX1[*]      ; CLOCK_50   ; 4.036 ; 4.036 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]     ; CLOCK_50   ; 4.079 ; 4.079 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]     ; CLOCK_50   ; 4.305 ; 4.305 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]     ; CLOCK_50   ; 4.292 ; 4.292 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]     ; CLOCK_50   ; 4.036 ; 4.036 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]     ; CLOCK_50   ; 4.262 ; 4.262 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]     ; CLOCK_50   ; 4.410 ; 4.410 ; Rise       ; CLOCK_50        ;
+; HEX2[*]      ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[0]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  HEX2[1]     ; CLOCK_50   ; 4.637 ; 4.637 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]     ; CLOCK_50   ; 4.345 ; 4.345 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]     ; CLOCK_50   ; 4.382 ; 4.382 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]     ; CLOCK_50   ; 4.322 ; 4.322 ; Rise       ; CLOCK_50        ;
+;  HEX2[5]     ; CLOCK_50   ; 4.375 ; 4.375 ; Rise       ; CLOCK_50        ;
+;  HEX2[6]     ; CLOCK_50   ; 4.108 ; 4.108 ; Rise       ; CLOCK_50        ;
+; HEX3[*]      ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]     ; CLOCK_50   ; 4.325 ; 4.325 ; Rise       ; CLOCK_50        ;
+;  HEX3[1]     ; CLOCK_50   ; 4.465 ; 4.465 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]     ; CLOCK_50   ; 4.272 ; 4.272 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]     ; CLOCK_50   ; 4.428 ; 4.428 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]     ; CLOCK_50   ; 4.267 ; 4.267 ; Rise       ; CLOCK_50        ;
+;  HEX3[5]     ; CLOCK_50   ; 4.536 ; 4.536 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]     ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
+; HEX4[*]      ; CLOCK_50   ; 4.106 ; 4.106 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]     ; CLOCK_50   ; 4.106 ; 4.106 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]     ; CLOCK_50   ; 4.269 ; 4.269 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]     ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]     ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]     ; CLOCK_50   ; 4.323 ; 4.323 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]     ; CLOCK_50   ; 4.462 ; 4.462 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]     ; CLOCK_50   ; 4.217 ; 4.217 ; Rise       ; CLOCK_50        ;
+; HEX5[*]      ; CLOCK_50   ; 4.149 ; 4.149 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]     ; CLOCK_50   ; 4.149 ; 4.149 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]     ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]     ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]     ; CLOCK_50   ; 4.389 ; 4.389 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]     ; CLOCK_50   ; 4.780 ; 4.780 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]     ; CLOCK_50   ; 4.353 ; 4.353 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]     ; CLOCK_50   ; 4.367 ; 4.367 ; Rise       ; CLOCK_50        ;
+; HEX6[*]      ; CLOCK_50   ; 4.469 ; 4.469 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]     ; CLOCK_50   ; 4.691 ; 4.691 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]     ; CLOCK_50   ; 4.856 ; 4.856 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]     ; CLOCK_50   ; 4.469 ; 4.469 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]     ; CLOCK_50   ; 4.618 ; 4.618 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]     ; CLOCK_50   ; 4.582 ; 4.582 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]     ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]     ; CLOCK_50   ; 4.679 ; 4.679 ; Rise       ; CLOCK_50        ;
+; HEX7[*]      ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]     ; CLOCK_50   ; 4.612 ; 4.612 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]     ; CLOCK_50   ; 4.742 ; 4.742 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]     ; CLOCK_50   ; 4.847 ; 4.847 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]     ; CLOCK_50   ; 4.670 ; 4.670 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]     ; CLOCK_50   ; 4.630 ; 4.630 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]     ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+; LCD_DATA[*]  ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[0] ; CLOCK_50   ; 4.510 ; 4.510 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[1] ; CLOCK_50   ; 5.310 ; 5.310 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[2] ; CLOCK_50   ; 4.900 ; 4.900 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[3] ; CLOCK_50   ; 4.981 ; 4.981 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[4] ; CLOCK_50   ; 4.963 ; 4.963 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[5] ; CLOCK_50   ; 5.293 ; 5.293 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[6] ; CLOCK_50   ; 5.072 ; 5.072 ; Rise       ; CLOCK_50        ;
+;  LCD_DATA[7] ; CLOCK_50   ; 4.730 ; 4.730 ; Rise       ; CLOCK_50        ;
+; LCD_EN       ; CLOCK_50   ; 4.974 ; 4.974 ; Rise       ; CLOCK_50        ;
+; LCD_ON       ; CLOCK_50   ; 5.141 ; 5.141 ; Rise       ; CLOCK_50        ;
+; LCD_RS       ; CLOCK_50   ; 5.288 ; 5.288 ; Rise       ; CLOCK_50        ;
+; LCD_RW       ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+; LEDG[*]      ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]     ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  LEDG[1]     ; CLOCK_50   ; 4.933 ; 4.933 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]     ; CLOCK_50   ; 4.620 ; 4.620 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]     ; CLOCK_50   ; 4.693 ; 4.693 ; Rise       ; CLOCK_50        ;
+;  LEDG[4]     ; CLOCK_50   ; 4.675 ; 4.675 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]     ; CLOCK_50   ; 4.770 ; 4.770 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]     ; CLOCK_50   ; 4.723 ; 4.723 ; Rise       ; CLOCK_50        ;
+;  LEDG[7]     ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
+;  LEDG[8]     ; CLOCK_50   ; 4.932 ; 4.932 ; Rise       ; CLOCK_50        ;
+; LEDR[*]      ; CLOCK_50   ; 4.055 ; 4.055 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]     ; CLOCK_50   ; 4.534 ; 4.534 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]     ; CLOCK_50   ; 4.547 ; 4.547 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]     ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]     ; CLOCK_50   ; 4.509 ; 4.509 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]     ; CLOCK_50   ; 4.225 ; 4.225 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]     ; CLOCK_50   ; 4.284 ; 4.284 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]     ; CLOCK_50   ; 4.496 ; 4.496 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]     ; CLOCK_50   ; 4.377 ; 4.377 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]     ; CLOCK_50   ; 4.055 ; 4.055 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]     ; CLOCK_50   ; 4.067 ; 4.067 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]    ; CLOCK_50   ; 4.281 ; 4.281 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]    ; CLOCK_50   ; 4.096 ; 4.096 ; Rise       ; CLOCK_50        ;
+;  LEDR[12]    ; CLOCK_50   ; 4.318 ; 4.318 ; Rise       ; CLOCK_50        ;
+;  LEDR[13]    ; CLOCK_50   ; 4.101 ; 4.101 ; Rise       ; CLOCK_50        ;
+;  LEDR[14]    ; CLOCK_50   ; 4.488 ; 4.488 ; Rise       ; CLOCK_50        ;
+;  LEDR[15]    ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]    ; CLOCK_50   ; 4.662 ; 4.662 ; Rise       ; CLOCK_50        ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 9.611 ; 9.611 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; SW[17]     ; LEDR[17]    ;    ; 5.517 ; 5.517 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 51950538 ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 51950538 ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 1042  ; 1042 ;
+; Unconstrained Output Ports      ; 95    ; 95   ;
+; Unconstrained Output Port Paths ; 352   ; 352  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 05 23:48:08 2023
+Info: Command: quartus_sta wrapper -c wrapper
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'wrapper.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.189
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.189    -83410.661 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380    -11646.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.049
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.049    -33878.993 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380    -11646.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4776 megabytes
+    Info: Processing ended: Fri May 05 23:48:17 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
+
+
